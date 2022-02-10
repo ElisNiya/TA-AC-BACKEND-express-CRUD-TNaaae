@@ -15,3 +15,6 @@ useNewUrlParser: true, useUnifiedTopology: true
 app.get('/', (req,res) => {
     res.send('welcome')
 })
+
+
+<h1><%= school %></h1>
