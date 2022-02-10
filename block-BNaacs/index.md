@@ -3,6 +3,7 @@ writeCode
 Create an express application named `school` from scratch and setup ejs as template engine.
 var express = require('express')
 var mongoose = require('mongoose')
+var path = require('path)
 
 mongoose.connect()
 
@@ -13,8 +14,12 @@ useNewUrlParser: true, useUnifiedTopology: true
 })
 
 app.get('/', (req,res) => {
-    res.send('welcome')
+    res.render('index.ejs')
 })
 
+app.set('view engine', 'ejs')
+app.set('views', __dirname + '/views')
+
+app.listen(3000)
 
 <h1><%= school %></h1>
