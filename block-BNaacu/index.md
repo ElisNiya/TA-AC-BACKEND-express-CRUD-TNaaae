@@ -9,7 +9,30 @@ Inside students routes file, create routes to
 
 - list all students => GET request on "/students" route
 
+
+var express = require('express')
+var router = express.Router()
+
+
+router.get('/', (req,res) =>{
+    res.send('book form')
+})
+
+router.post('/', (req,res) =>{
+    
+})
+
+router.get('/', (req,res) =>{})
+
+    
   - render an ejs template
+
+app.get('/', (req,res) => {
+res.render('students', {list: names}) })
+
+<h1><%= students %></h1>
+<% list.forEach(l => {}) %>
+  
   - pass array of students to template as second argument like
 
   ```js
