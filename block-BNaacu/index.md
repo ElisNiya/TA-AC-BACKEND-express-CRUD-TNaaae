@@ -12,7 +12,7 @@ Inside students routes file, create routes to
 
 var express = require('express')
 var router = express.Router()
-
+var studentsRouter = require('./routes/students')
 
 router.get('/', (req,res) =>{
     res.send('book form')
@@ -27,6 +27,10 @@ router.get('/', (req,res) =>{})
     
   - render an ejs template
 
+app.use((req,res,next) => {
+res.status(404).send('Page Not Found')
+})
+app.use('/students', studentsRouter)
 app.get('/', (req,res) => {
 res.render('students', {list: names}) })
 
