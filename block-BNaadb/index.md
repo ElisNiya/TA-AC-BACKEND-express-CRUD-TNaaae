@@ -11,7 +11,7 @@ but html anchor tags only support GET http method we have modified delete route 
 
 
 router.get('/:id/delete', (req,res, next) =>{
-    User.finAndDelete(req.params.id, (err, user) => {
+    User.findAndDelete(req.params.id, (err, user) => {
         if(err) return next(err)
         res.redirect('/users')
     })
